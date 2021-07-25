@@ -36,7 +36,7 @@ elif [[ "$COMPONENT_NAME" =~ ^(ueransim-gnb-[[:digit:]]+$) ]]; then
 elif [[ "$COMPONENT_NAME" =~ ^(ueransim-ue-[[:digit:]]+$) ]]; then
 	echo "Deploying component: '$COMPONENT_NAME'"
 	/mnt/ueransim/open5gs_ue_init.sh && \
-	./nr-ue -c ../config/open5gs-ue.yaml & \
+	./nr-ue -c ../config/open5gs-ue.yaml -n 3 & \
 	bash
 else
 	echo "Error: Invalid component name: '$COMPONENT_NAME'"
